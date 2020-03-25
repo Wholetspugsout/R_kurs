@@ -600,20 +600,32 @@ numbers
 
 sort(numbers)
 
+#51. VIDEO MACIERZ, czyli wektor z wierszami i kolumnami
 
+mx <- matrix(1:24, nrow = 4)
+mx
 
+mx <- matrix(1:24, nrow =6)
+mx
 
+mx <- matrix(1:24, ncol =4)
+mx
 
+mx <- matrix(1:24, nrow = 4)
+mx
 
+mx[2,3]
+mx [2, c(1,5,6)]
+mx[2,c(1,5:6)]
 
+mx[c(1,3), c(1,5,6)]
 
+mx[ ,2]
+mx[ , ]
 
-
-
-
-
-
-
+rownames(mx) <- c('center', 'station', 'castle', 'campus')
+colnames(mx) <- DescTools::day.abb [1:6]
+mx
 
 
 
