@@ -627,35 +627,212 @@ rownames(mx) <- c('center', 'station', 'castle', 'campus')
 colnames(mx) <- DescTools::day.abb [1:6]
 mx
 
+mx['center',]
+
+mx[ , 'Thu']
+
+mx['castle', c('Fri','Sat')]
+
+# LAB 52
+
+# cwiczenie 1
+
+v <- as.vector(datasets::USAccDeaths)
+v
+
+# cwiczenie 2
+
+m <- matrix(data = v, ncol = 12)
+m
+?matrix
+
+# cwiczenie 3
+
+rownames(m) <- c(1973:1978)
+m
+
+# cwiczenie 4
+
+colnames(m) <- month.abb
+m
+
+# cwiczenie 5
+
+m[as.character(1974), ]
+
+# cwiczenie 6
+
+m[ ,'Oct']
+
+# cwiczenie 7
+
+m[as.character(1973) ,'Oct']
+
+# cwiczenie 8
+
+m[1:2,7:8]
+
+# cwiczenie 9
+
+unname(m)
+
+# 54.ARRAY - TABLICE WIELOWYMIAROWE
+
+a <- array(data = 1:24, dim =c (2,3,4))
+a
+
+a[1,2,3]
+a[ ,2,3]
+a[,,4]
+a
+a[1,1,]
+
+dimnames(a)[[1]] <- c('row1', 'row2')
+dimnames(a)[[2]] <- c('col1','col2','col3')
+dimnames(a)[[3]] <- c('l1','l2','l3','l4')
+a
+
+a['row1','col3','l1']
+
+dimnames(a)
+
+dimnames(a)[1]
+
+dimnames(a)[[1]]
+
+x <- array(1:48, dim =c(2,3,4,2))
+dimnames(x)[[1]] <- c('r1', 'r2')
+dimnames(x)[[2]] <- c('c1','c2','c3')
+dimnames(x)[[3]] <- c('l1','l2','l3','l4')
+dimnames(x)[[4]] <- c('inner','outer')
+dimnames(x)
+x
+
+y = array (data= 1:24, dim = c(2,3,4),
+           dimnames = list(c('r1','r2'), c('c1','c2', 'c3'), c('l1', 'l2', 'l3', 'l4')))
+y
+
+dimnames(y)
+dimnames(y)[2]
+
+a
+a[1,2,4] <- 100
+a
+
+a*100
+
+# LAB 55.
+
+# cwiczenie 1
+
+data <- c(
+  'E-Tron', 'A7 Sportback S', 'Electric', '2.0 TDI Diesel','402', '201', '5.5', '6.8', '490', '496',
+  'i8', '7-Series', 'Petrol/Electric/Hybrid', '725d Diesel', '356', '227', '4.3',  '6.7', '468', '509',
+  'Leaf', 'NV200', 'Electric', 'Electric', '147', '107',  '8.3', '13.6','449',  '456')
+
+# cwiczenie 2
+
+cars <- array(data, dim = c(2,5,3))
+cars
+
+# cwiczenie 3
+
+dimnames(cars)[[2]] = c( 'Model', 'Engine', 'Power', '0-60mph', 'Length')
+cars
+
+# cwiczenie 4
+
+dimnames(cars)[[3]] = c('Audi', 'BMW', 'Nissan')
+cars
+
+# cwiczenie 5
+
+cars[, 'Model',]
+
+# cwiczenie 6 
+
+cars[ ,'Engine', 'Nissan']
+
+# cwiczenie 7
+
+cars[ ,, 'Nissan']
+
+# cwiczenie 8
+
+cars2 <- array(data, dim= c(2,5,3),
+               dimnames = list(NULL, c('Model', 'Engine', 'Power', '0-60mph', 'Length'), c('Audi', 'BMW', 'Nissan')))
+
+cars2
+
+#  56 LISTY
+
+obj <- c(1,2,3)
+obj
+
+typeof(obj)
+
+obj <- c(1,2,'three')
+obj
+
+typeof(obj)
 
 
+color_v <- c('red','green', 'blue')
+size_m <- matrix(c('S','M','L','X'), nrow = 2)
+promotion_v <- c(T,T,F,T)
+amount <- 890
+
+l <- list(color_v, size_m,promotion_v,amount)
+l
+
+l[1]
+typeof(l[1])
+
+l[[1]]
+typeof(l[[1]])
+
+names(l) <- c('colors', 'sizes', 'promotion', 'amount')
+names(l)
+l
+
+l['promotion']
+
+l[['promotion']]
+
+l$promotion
+
+l$amount *100
+
+toupper(l$promotion)
+
+is.matrix(l$promotion)
+
+is.list(l)
+
+length(l$promotion)
 
 
+# LAB 57 LISTY
 
+# cwiczenie 1
 
+companies <- c('Expedia','Priceline','American Express')
 
+# cwiczenie 2
 
+earnings <- c(50.4, 50.3, 29.9)
 
+# cwiczenie 4
 
+employees <- c(22.6, 24.5, 12)
 
+# cwiczenie 3
 
+founded <- c(1966, 1997, NA)
 
+# cwiczenie 5
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+travel_info <- list(companies, earnings, founded, employees)
 
 
 
