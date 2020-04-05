@@ -241,6 +241,14 @@ top50$TrackName[filter_pop]
 
 top50[filter_pop, c("ArtistName", 'TrackName')]  
 top50[filter_pop,] # wyswieti wszytsko co spelnia warunek filter pop 
+
+top50[4, "Genre"] <- NA
+
+filter_pop <- top50$Genre == 'pop'
+top50[filter_pop,]
+
+is.na(top50$Genre) # sprawdza czy wartosc to NA
+
   
 
 
